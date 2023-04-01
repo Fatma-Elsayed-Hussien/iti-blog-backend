@@ -18,12 +18,14 @@ const userSchema = new Schema(
       type: String,
       select: false,
     },
-    photo: {
-      type: Array,
-      default: null,
-    },
-    cover_photo: Array,
-    bio: String,
+    photo: String,
+    gender: String,
+    // photo: {
+    //   type: Array,
+    //   default: null,
+    // },
+    // cover_photo: Array,
+    // bio: String,
   },
   { timestamps: true },
 

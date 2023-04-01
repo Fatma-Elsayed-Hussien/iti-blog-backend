@@ -35,14 +35,15 @@ app.use(express.static(path.join(__dirname, "uploads")));
 // morgan
 app.use(morgan("dev"));
 // routes
+// console.log("hello");
 app.use("/v1/users", authRouter);
 app.use("/v1/user/profile", userRouter);
 app.use("/v1/post", postRouter);
 
 // route not exist
-app.all("*", (req, res, next) => {
-  next(errorHandler(`can't found route: ${req.originalUrl}`, 404));
-});
+// app.all("*", (req, res, next) => {
+//   next(errorHandler(`can't found route: ${req.originalUrl}`, 404));
+// });
 
 //database server
 mongoose.connect(process.env.DATABASE).then((_) => {
@@ -55,3 +56,4 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(port, () => console.log(`Server is listening on port : ${port}`));
+

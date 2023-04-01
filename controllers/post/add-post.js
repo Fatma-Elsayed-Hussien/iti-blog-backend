@@ -6,7 +6,7 @@ const { successHandler } = require("../../utils/responseHandler");
 exports.createPost = async (req, res, next) => {
   try {
     let post = { ...req.body, user: req.userID };
-
+    
     if (req.file?.photo) {
       post.photo = await uploadCloudBB(req.file.photo);
     }

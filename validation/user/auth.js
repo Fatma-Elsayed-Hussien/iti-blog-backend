@@ -7,12 +7,13 @@ const signupSchema = joi.object({
   username: joi.string().min(3).required(),
   email: joi.string().email().required(),
   password: joi.string().required().min(6),
-  confirm_password: joi
+  confirmPassword: joi
     .any()
     .valid(joi.ref("password"))
     .required()
     .label("confirm password")
     .messages({ "any.only": "{{#label}} does not match" }),
+  gender: joi.string().required().valid("female", "male")
 });
 
 const signinScehma = joi.object({

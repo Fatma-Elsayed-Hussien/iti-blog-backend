@@ -12,7 +12,6 @@ exports.updateUser = async (req, res, next) => {
     const { new_password, curr_password } = req.body;
     const getUser = await userModel.findById(req.userID).select("password");
 
-    console.log(getUser);
     if (parseInt(getUser.id) !== parseInt(req.userID)) {
       throw errorHandler("unauthorized", 401);
     }

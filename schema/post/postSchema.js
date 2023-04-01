@@ -8,10 +8,10 @@ const postSchema = new Schema(
     title: {
       type: String,
     },
-    content: {
+    description: {
       type: String,
     },
-    photo: Array,
+    photo: String,
     user: {
       type: Schema.Types.ObjectId,
       ref: "User",

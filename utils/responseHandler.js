@@ -18,9 +18,9 @@ function successHandler(
   status = 200
 ) {
   res.status(status).json({
-    success: true,
-    length,
-    message,
+    // success: true,
+    // length,
+    // message,
     data,
   });
 }
