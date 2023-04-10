@@ -11,7 +11,7 @@ exports.getPosts = async (req, res, next) => {
       .limit(limit ?? undefined)
       .populate("user");
     // res.status(200).json(allPosts)
-    successHandler(res, posts, posts.length);
+    successHandler(res, allPosts, posts.length);
   } catch (err) {
     next(err);
   }
