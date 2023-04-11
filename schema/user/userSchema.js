@@ -20,7 +20,7 @@ const userSchema = new Schema(
     },
     photo: String,
     gender: String,
-    photo: String,
+    // photo: String,
     // cover_photo: Array,
     // bio: String,
   },
