@@ -10,7 +10,7 @@ exports.getPosts = async (req, res, next) => {
       .find({})
       .limit(limit ?? undefined)
       .populate("user")
-      .sort("-createdAt");
+      // .sort("-createdAt");
     // res.status(200).json(allPosts)
     successHandler(res, posts, posts.length);
   } catch (err) {
