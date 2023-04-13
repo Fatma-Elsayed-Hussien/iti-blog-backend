@@ -9,7 +9,8 @@ exports.getPosts = async (req, res, next) => {
     const posts = await postModel
       .find({})
       .limit(limit ?? undefined)
-      .populate("user");
+      .populate("user")
+      .sort("-createdAt");
     // res.status(200).json(allPosts)
     successHandler(res, posts, posts.length);
   } catch (err) {
